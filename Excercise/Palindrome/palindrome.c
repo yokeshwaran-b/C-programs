@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-#define isChar(c) (( (c) >= 65 && (c) <=90) || ( (c) >= 97 && (c) <=122 ))
+#define isChar(c) (((c) >= 65 && (c) <= 90) || ((c) >= 97 && (c) <= 122))
 
-#define isCompleted(f,e) ( (f) > (e) )
+#define isCompleted(f, e) ((f) > (e))
 
-#define isCharMatch(c1,c2) ( (c1) == (c2) )
+#define isCharMatch(c1, c2) ((c1) == (c2))
 
-#define ifUpperCaseConvertToLower(c) ( ( (c) >=65 && (c) <=90 ) ? c+32 : c)
+#define ifUpperCaseConvertToLower(c) (((c) >= 65 && (c) <= 90) ? c + 32 : c)
 
 // int isNumber(char c){
 //     if((c >= 65 && c<=90) || (c >= 97 && c<=122)){
@@ -23,20 +23,12 @@
 //     return 0;
 // }
 
-// int isCharMatch(char c1, char c2){
-//     if(c1==c2){
-//         return 1;
-//     }
-//     return 0;
-// }
-
 // char ifUpperCaseConvertToLower(char c){
 //     if(c>=65 && c<=90){
 //         return c+32;
 //     }
 //     return c;
 // }
-
 
 int isPalindrome(char str[])
 {
@@ -46,24 +38,25 @@ int isPalindrome(char str[])
 
     int f = 0;
     int e = strlen(str) - 1;
-    int flag=0;
-    while (!(isCompleted(f,e)))
+    int flag = 0;
+    while (!(isCompleted(f, e)))
     {
         if (!(isChar(str[f])))
         {
             f++;
             continue;
         }
-        if(!(isChar(str[e])))
+        if (!(isChar(str[e])))
         {
             e--;
             continue;
         }
-        printf("\nMatching %c %c", ifUpperCaseConvertToLower(str[f]),  ifUpperCaseConvertToLower(str[e]));
-        if( !isCharMatch(ifUpperCaseConvertToLower(str[f]),ifUpperCaseConvertToLower(str[e]))){
+        printf("\nMatching %c %c", ifUpperCaseConvertToLower(str[f]), ifUpperCaseConvertToLower(str[e]));
+        if (!isCharMatch(ifUpperCaseConvertToLower(str[f]), ifUpperCaseConvertToLower(str[e])))
+        {
             return 0;
         }
-        flag=1;
+        flag = 1;
         f++;
         e--;
     }
@@ -73,7 +66,7 @@ int isPalindrome(char str[])
 // Driver program to test above function
 int main()
 {
-    int a=isPalindrome("Mad134516616am547368369");
-    printf("\n%d",a);
+    int a = isPalindrome("Mad134516616am547368369");
+    printf("\n%d", a);
     return 0;
 }
