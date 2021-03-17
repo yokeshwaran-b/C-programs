@@ -7,7 +7,7 @@
 
 #define isCharMatch(c1, c2) ((c1) == (c2))
 
-#define ifUpperCaseConvertToLower(c) (((c) >= 65 && (c) <= 90) ? c + 32 : c)
+#define ifUpperCaseConvertToLower(c) (((c) >= 65 && (c) <= 90) ? (c + 32) : (c))
 
 // int isNumber(char c){
 //     if((c >= 65 && c<=90) || (c >= 97 && c<=122)){
